@@ -4,13 +4,12 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: idf-dev
+    privileged: true
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
        - $HOME/.Xauthority/:/root/.Xauthority
       - /dev:/dev:rw
       - ./workspace:/home/developer/workspace
-    devices:
-      - /dev/ttyACM0:/dev/ttyACM0
     environment:
       - DISPLAY=${DISPLAY}
     tty: true
