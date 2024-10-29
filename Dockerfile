@@ -34,7 +34,8 @@ RUN \
     libffi-dev \
     libssl-dev \
     dfu-util \
-    libusb-1.0-0
+    libusb-1.0-0 \
+    udev
 
 # add sudo permission to user
 # add serial device permission to user
