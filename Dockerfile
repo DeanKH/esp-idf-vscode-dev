@@ -49,8 +49,6 @@ USER developer
 WORKDIR /home/developer
 
 RUN mkdir -p /home/developer
-COPY --chown=developer:developer vscode /home/developer/.vscode-server
-
 
 RUN \
     mkdir -p /home/developer/esp/${ESP_IDF_TAG} && \
@@ -63,8 +61,11 @@ RUN /bin/bash -c "source /home/developer/esp/${ESP_IDF_TAG}/esp-idf/export.sh &&
 
 RUN \
     mkdir -p /home/developer/components && \
+    cd /home/developer/components && \
     git clone --recursive https://github.com/m5stack/M5Unified.git -b 0.1.10 && \
     git clone --recursive https://github.com/m5stack/M5GFX.git -b 0.1.10 && \
     git clone --recursive https://github.com/DeanKH/mros2-esp32.git
+
+RUN mkdir /home/developer/.vscode-server
 
 CMD ["/bin/bash"]

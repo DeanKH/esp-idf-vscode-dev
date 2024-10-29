@@ -10,6 +10,7 @@ services:
        - $HOME/.Xauthority/:/root/.Xauthority
       - /dev:/dev:rw
       - ./workspace:/home/developer/workspace
+      - ./vscode/extensions:/home/developer/.vscode-server/extensions
     environment:
       - DISPLAY=${DISPLAY}
     tty: true
