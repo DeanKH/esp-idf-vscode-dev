@@ -19,7 +19,22 @@ RUN \
     --mount=type=cache,target=/var/lib/apt \
     apt-get update && \
     apt-get install -y \
-    sudo git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
+    sudo \
+    git \
+    wget \
+    flex \
+    bison \
+    gperf \
+    python3 \
+    python3-pip \
+    python3-venv \
+    cmake \
+    ninja-build \
+    ccache \
+    libffi-dev \
+    libssl-dev \
+    dfu-util \
+    libusb-1.0-0
 
 # add sudo permission to user
 # add serial device permission to user
