@@ -21,14 +21,13 @@ RUN \
     apt-get install -y \
     sudo git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
 
+# add sudo permission to user
+# add serial device permission to user
 RUN \
     useradd -m -s /bin/bash -u 1000 developer && \
     echo "developer:developer" | chpasswd && \
-    usermod -aG sudo developer
-
-# add serial device permission to user
-RUN usermod -a -G dialout developer
-
+    usermod -aG sudo developer && \
+    usermod -aG dialout developer
 
 USER developer
 WORKDIR /home/developer
