@@ -11,6 +11,8 @@ services:
       - /dev:/dev:rw
       - ./workspace:/home/developer/workspace
       - ./vscode/extensions:/home/developer/.vscode-server/extensions
+    tty: true
     environment:
       - DISPLAY=${DISPLAY}
-    tty: true
+      - ESP_WIFI_SSID=${ESP_WIFI_SSID}
+      - ESP_WIFI_PASS=${ESP_WIFI_PASS}
