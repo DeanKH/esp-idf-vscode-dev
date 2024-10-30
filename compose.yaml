@@ -9,8 +9,12 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
        - $HOME/.Xauthority/:/root/.Xauthority
       - /dev:/dev:rw
-      - ./workspace:/home/developer/workspace
-      - ./vscode/extensions:/home/developer/.vscode-server/extensions
+      - type: bind
+        source: ./workspace
+        target: /home/developer/workspace
+      - type: bind
+        source: ./vscode/extensions
+        target: /home/developer/.vscode-server/extensions
     tty: true
     environment:
       - DISPLAY=${DISPLAY}
