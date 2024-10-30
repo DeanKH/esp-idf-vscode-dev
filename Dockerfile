@@ -62,9 +62,9 @@ RUN /bin/bash -c "source /home/developer/esp/${ESP_IDF_TAG}/esp-idf/export.sh &&
 RUN \
     mkdir -p /home/developer/components && \
     cd /home/developer/components && \
-    git clone --recursive https://github.com/m5stack/M5Unified.git -b 0.1.10 && \
+    git clone --recursive https://github.com/m5stack/M5Unified.git -b 0.1.13 && \
     git clone --recursive https://github.com/m5stack/M5GFX.git -b 0.1.10 && \
-    git clone --recursive https://github.com/DeanKH/mros2-esp32.git
+    git clone --recursive https://github.com/DeanKH/mros2-esp32.git -b develop
 
 RUN mkdir /home/developer/.vscode-server
 
