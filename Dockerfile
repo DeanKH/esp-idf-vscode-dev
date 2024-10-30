@@ -66,6 +66,8 @@ RUN \
     git clone --recursive https://github.com/m5stack/M5GFX.git -b 0.1.10 && \
     git clone --recursive https://github.com/DeanKH/mros2-esp32.git -b develop
 
+ENV MROS2_COMPONENTS_PATH=/home/developer/components
+
 RUN mkdir /home/developer/.vscode-server
 
 CMD ["/bin/bash"]
